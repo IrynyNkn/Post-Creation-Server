@@ -1,9 +1,10 @@
 import PostMessage from "../models/postMessage.js";
+import animation from "../models/animation.js";
 import mongoose from "mongoose";
 
 export const getPosts = async (req, res) => {
     try{
-        const postMessages = await PostMessage.find();
+        const postMessages = await animation.find();
         res.status(200).json(postMessages);
     }catch (error){
         res.status(404).json({ message: error.message });
